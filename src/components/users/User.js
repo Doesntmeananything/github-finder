@@ -5,6 +5,8 @@ import Spinner from "../layout/Spinner";
 import Repos from "../repos/Repos";
 
 const User = ({ user, loading, getUser, getUserRepos, repos, match }) => {
+  // TODO: figure out what causes an infinte loop of requests
+  // if functions are in the array of deps
   useEffect(() => {
     getUser(match.params.login);
     getUserRepos(match.params.login);
